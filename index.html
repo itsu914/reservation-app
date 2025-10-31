@@ -1,27 +1,24 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html>
 <head>
   <meta charset="UTF-8">
-  <title>ゲーム画面</title>
-  <link rel="stylesheet" href="style.css">
+  <title>TikTok予約アプリ</title>
+  <style>
+    body { font-family: sans-serif; text-align: center; padding: 20px; }
+    input, button { margin: 6px; padding: 8px; }
+    ul { list-style: none; padding: 0; }
+    li { border: 1px solid #ccc; margin: 5px 0; padding: 5px; }
+  </style>
 </head>
 <body>
-  <h1>ゲーム画面</h1>
-  <p>パズルを完成させると報酬リンクがもらえます</p>
-  <button id="completeBtn">パズル完成！</button>
-  <p id="reward"></p>
+  <h2>📅 TikTok予約アプリ</h2>
+  <input id="username" placeholder="TikTokのユーザー名を入力">
+  <button onclick="reserve()">予約する</button>
+  <button onclick="cancel()">キャンセル</button>
 
-  <script>
-    const rewardLinks = [
-      "https://example.com/pay1",
-      "https://example.com/pay2",
-      "https://example.com/pay3"
-    ];
+  <h3>🧾 予約リスト（先着順）</h3>
+  <ul id="list"></ul>
 
-    document.getElementById("completeBtn").addEventListener("click", () => {
-      const link = rewardLinks[Math.floor(Math.random() * rewardLinks.length)];
-      document.getElementById("reward").innerHTML = `報酬リンク：<a href="${link}" target="_blank">${link}</a>`;
-    });
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
