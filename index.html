@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>ゲーム画面</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>ゲーム画面</h1>
+  <p>パズルを完成させると報酬リンクがもらえます</p>
+  <button id="completeBtn">パズル完成！</button>
+  <p id="reward"></p>
+
+  <script>
+    const rewardLinks = [
+      "https://example.com/pay1",
+      "https://example.com/pay2",
+      "https://example.com/pay3"
+    ];
+
+    document.getElementById("completeBtn").addEventListener("click", () => {
+      const link = rewardLinks[Math.floor(Math.random() * rewardLinks.length)];
+      document.getElementById("reward").innerHTML = `報酬リンク：<a href="${link}" target="_blank">${link}</a>`;
+    });
+  </script>
+</body>
+</html>
